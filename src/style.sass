@@ -1,0 +1,26 @@
+$card-body-color: grey
+$card-text-color: blue
+$card-hover-body-color: white
+
+ul
+    list-style: none
+    padding: 0
+
+%card
+    color: $card-text-color,
+    background-color: $card-body-color,
+    width:200px,
+    margin-top:10px,
+    cursor: pointer
+
+
+.listCard
+    &__card
+        @extend %card
+    &__card_hovered
+        @extend %card        
+        background-color: $card-hover-body-color,
+
+
+
+        
