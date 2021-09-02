@@ -1,6 +1,6 @@
-$card-body-color: grey
-$card-text-color: blue
-$card-hover-body-color: white
+$card-body-color: white
+$card-text-color: black
+$card-hover-body-color: gray
 
 ul
     list-style: none
@@ -14,12 +14,24 @@ ul
     cursor: pointer
 
 
-.listCard
+input
+    width: 200px
+    height: 2em
+    color: red 
+
+.search
+    width: 200px
+    margin: auto 
+    &__input
     &__card
         @extend %card
     &__card_hovered
         @extend %card        
-        background-color: $card-hover-body-color,
+        background-color: $card-hover-body-color,            
+
+
+
+
 
 
 

@@ -31,7 +31,7 @@ export default function GeneratorList({query, reset,currentQuery}){
 
     let targetIndex = null   
       for(let i  = 0; i < allLi.length ; i++){
-        if(allLi[i].className === 'listCard__card_hovered' )
+        if(allLi[i].className === 'search__card_hovered' )
         {
           targetIndex = i
           deleteLight()
@@ -48,14 +48,14 @@ export default function GeneratorList({query, reset,currentQuery}){
   
   
   function deleteLight(){
-    const coveredLi = document.querySelector('.listCard__card_hovered')
+    const coveredLi = document.querySelector('.search__card_hovered')
     if(!coveredLi) return
-    coveredLi.classList = 'listCard__card'
+    coveredLi.classList = 'search__card'
   }
   
   const addLight = (liElement) => {
     if(liElement)
-    liElement.className = 'listCard__card_hovered'
+    liElement.className = 'search__card_hovered'
   }
   
   const clickToList  = (e) =>{
@@ -73,7 +73,7 @@ export default function GeneratorList({query, reset,currentQuery}){
 
 
   const listItems =  listCard.map( (val) =>
-  <li key= {val.id} className = 'listCard__card'>
+  <li key= {val.id} className = 'search__card'>
            <div> <strong> {val.name} </strong></div>
             <small> {val.address} </small>
         </li>

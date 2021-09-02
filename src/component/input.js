@@ -10,10 +10,12 @@ function filter(allCards, query){
     topics.forEach((val) =>
     {
         for(let i = 0; i < allCards.length; i++){
-            if(allCards[i][val].includes(query))
+
+            if(allCards[i][val].toLowerCase().includes(query.toLowerCase()))
                 {
-                    sortedQuery.push(allCards[i])
-                    break
+                    if(!sortedQuery.includes(allCards[i]))
+                        sortedQuery.push(allCards[i])
+                    continue
                 } 
         }
     })
@@ -47,19 +49,21 @@ export default function input(){
     },[])
 
     function handleInput(e){
+        e.preventDefault()
         SetQuery(e.target.value)
         setCurrentCards(filter(allCards, e.target.value))
     }
 
 
+    
     return(
-        <>
-            <input onChange = {handleInput} onClick = {handlerInputClick}
+        <div className = 'search'>
+            <input className = "search__input" name = 'query' autocomplete = 'off' onChange = {handleInput} onClick = {handlerInputClick}
                 type="text" 
                 placeholder="Type a query..."
             />
             <CardGenerator query = {query} reset = {reset} currentQuery = {currentQuery}/>
-        </>
+        </div>
 
         )
     }
