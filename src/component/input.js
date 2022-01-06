@@ -54,6 +54,8 @@ export default function input(){
         setCurrentCards(filter(allCards, e.target.value))
     }
 
+  
+
 
     
     return(

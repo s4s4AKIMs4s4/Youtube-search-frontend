@@ -1,0 +1,1 @@
+setupFiles: ['D:/projects/search/setupJest.js']
